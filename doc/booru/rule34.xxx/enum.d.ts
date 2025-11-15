@@ -28,18 +28,18 @@ export declare enum PostStatus {
     /**
      * Post that is visible and unflagged.
      */
-    Active,
+    Active = 0,
 
     /**
      * Post that has been reported and is awaiting moderation.
      */
-    Flagged,
+    Flagged = 1,
 
     /**
      * Post that has been removed and hidden, only being found when searching for
      * deleted posts.
      */
-    Deleted
+    Deleted = 2
 };
 
 /**
@@ -49,28 +49,28 @@ export declare enum TagType {
     /**
      * Tag that refers to a copyright.
      */
-    Copyright,
+    Copyright = 0,
 
     /**
      * Tag that identifies a character or type of character, or covers a vague
      * character description.
      */
-    Character,
+    Character = 1,
 
     /**
      * Tag that credits with an artist alias or explains lack of artist tags.
      */
-    Artist,
+    Artist = 2,
 
     /**
      * Tag that describes visuals, activity, or generic interests.
      */
-    General,
+    General = 3,
 
     /**
      * Tag that describes metadata info regarding a post or its media.
      */
-    Metadata,
+    Metadata = 4,
 
     /**
      * Tag with errenous `null` type; visualized as 'general' by the site.
