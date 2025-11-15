@@ -1,14 +1,12 @@
 import { getUrl } from "#lib/url.js";
 
-const baseHost = "https://rule34.xxx";
-const apiHost = "https://api.rule34.xxx";
-
 export function autocomplete(query) {
-    
+    const tag = query.match(/\s?(\S+)\s?$/)[1];
+    return "https://ac.rule34.xxx/autocomplete.php?q=" + tag;
 }
 
 export function search(param) {
-    return getUrl(baseHost, {
+    return getUrl("https://rule34.xxx", {
         page: "post",
         s: "list",
         tags: param.query ?? "",
