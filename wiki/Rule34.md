@@ -50,7 +50,18 @@ This package's namesake comes from the usage of Rule34's APIs and frontends&mdas
 
 ### Examples
 
-<!-- examples -->
+In this example, the post at ID '5823623' is fetched and its contents are used.
+
+```js
+const rule34 = new Rule34({
+  api_key: "123456789ABCDEF",
+  user_id: 1234567
+});
+
+rule34.getPost(5823623)
+  .then(post => console.log(post.owner.name));
+// Logs "grovyleslut"
+```
 
 ## Rule34() constructor
 
