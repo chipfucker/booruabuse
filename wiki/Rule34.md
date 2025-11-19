@@ -98,4 +98,4 @@ new Rule34({ user_id, api_key, pass_hash, config })
 
 - `config`
   
-  An object that sets up custom configurations
+  An object that sets up custom configurations applied when sending requests.
