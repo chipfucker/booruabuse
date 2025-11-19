@@ -48,7 +48,7 @@ This package's namesake comes from the usage of Rule34's APIs and frontends&mdas
 
   Fetches multiple results of a query and/or conditions.
 
-### Examples
+## Examples
 
 In this example, the post at ID '5823623' is fetched and its contents are used.
 
