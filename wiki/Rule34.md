@@ -1,6 +1,4 @@
-Rule34 has a very stubborn API, as it doesn't provide all the info a developer may seek, and the different result types yield different results, some exclusive. This makes it quite difficult to get many kinds of info, especially post info from a search.
-
-This package's namesake comes from the usage of Rule34's APIs and frontends&mdash;a lot of requests (usually about 2&ndash;4) are made when most of the functions are used.
+Rule34 is a module for accessing content from [rule34.xxx](https://rule34.xxx/). This package's namesake is from this submodule.
   
 # Table of contents
 
@@ -79,6 +77,15 @@ import { Rule34 } from "booru-abuse";
 
 const post = await Rule34.getPost(5823623);
 ```
+
+## Many requests
+
+Because APIs and frontends have very differing info, multiple requests are made&mdash;typically 2&ndash;4&mdash;per function to resolve all possible info. This makes the package's namesake.
+
+This can have network and API usage limit implications.
+
+<!-- TODO: display average data size of multiple requests -->
+<!-- TODO: display default API key usage allowance -->
 
 # Examples
 
