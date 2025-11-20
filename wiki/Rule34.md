@@ -2,7 +2,7 @@ Rule34 has a very stubborn API, as it doesn't provide all the info a developer m
 
 This package's namesake comes from the usage of Rule34's APIs and frontends&mdash;a lot of requests (usually about 2&ndash;4) are made when most of the functions are used.
 
-### Description
+## Description
 
 Traditionally, one would simply fetch from Rule34 using its API URLs.
 
@@ -12,7 +12,6 @@ const post = await fetch(
   + "?page=dapi&s=post&q=index&json=1&api_key=123abc&user_id=123456"
   + "&id=5823623"
 );
-console.log(post[0].creator);
 ```
 
 All the info, even credentials, is to be provided in the URL's search parameters. There are usually _many_ keys, some with lengthy values, some unnecessary&mdash;static, but mandatory for the request&mdash;which makes organizing request info difficult.
@@ -27,94 +26,89 @@ Each key has a different function. To name the few in the above example:
 - `user_id`: Associates the request with a user on the site.
 - `id`: The ID of the requested post.
 
-The reliance on URLs for requests, especially credentials, make request organization difficult. The common solution is to dynamically create links with a function.
+The reliance on URLs for requests, especially lengthy credentials, make request organization difficult. The common solution is to dynamically create links with a function.
 
-Even with the length of the URLs, the API isn't reliable; each of the different return types have some exclusive info, and none return some additional info the frontend displays.
+Even with the length of the URLs, the API isn't reliable; each of the different return types have some exclusive info, and even the frontend pages have their own info not found using the APIs.
 
-This package intends to solve that, simplifying request parameters and allowing initialization of other consistent parameters.
+This package intends to solve that, allowing initialization of constants, simplifying request parameters, and even providing info only found on frontend pages.
 
-## Table of contents
-
-### Constructor
-
-- [`Rule34()`](#rule34-constructor)
-  
-  Creates a new `Rule34` object.
-
-### Static properties
-
-- [`Rule34.PostRating`](#rule34postrating)
-
-  Enum for post content ratings.
-
-- [`Rule34.PostStatus`](#rule34poststatus)
-  
-  Enum for post publicity statuses.
-
-- [`Rule34.TagType`](#rule34tagtype)
-
-  Enum for tag categories.
-
-### Instance properties
-
-- [`Rule34.user_id`](#rule34prototypeuser_id)
-  
-  The `user_id` property initialized for this instance, or `undefined` if unset.
-
-- [`Rule34.api_key`](#rule34prototypeapi_key)
-
-  The `api_key` property initialized for this instance, or `undefined` if unset.
-
-- [`Rule34.pass_hash`](#rule34prototypepass_hash)
-
-  The `pass_hash` property initialized for this instance, or `undefined` if unset.
-
-### Instance methods
-
-- [`Rule34.getPost()`](#rule34prototypegetPost)
-
-  Fetches a post by its ID or by the first result of a query.
-
-- [`Rule34.search()`](#rule34prototypesearch)
-
-  Fetches multiple results of a query and/or conditions.
-
-## Examples
-
-In this example, the post at ID '5823623' is fetched and its contents are used.
-
-```js
-const rule34 = new Rule34({
-  api_key: "123456789ABCDEF",
-  user_id: 1234567
-});
-
-rule34.getPost(5823623)
-  .then(post => console.log(post.owner.name));
-// Logs "grovyleslut"
-```
-
-## Rule34() constructor
-
-The `Rule34()` constructor creates a [`Rule34`](#) instance that allows accessing the content of rule34.xxx.
-
-### Import
+With this package, the above example can be simplified. For example:
 
 ```js
 import { Rule34 } from "booru-abuse";
+
+const post = await Rule34.getPost(5823623);
 ```
+
+# Table of contents
+
+## Functions
+
+- [`setCredentials()`](#rule34setcredentials)
+
+  Sets the cretentials to use with requests.
+
+- [`getPost()`](#rule34getpost)
+
+  Fetches a post by its ID or by the first result of a query.
+
+- [`search()`](#rule34search)
+
+  Fetches multiple results of a query and/or conditions.
+
+## Enumerables
+
+- [`PostRating`](#rule34postrating)
+
+  Enum for post content ratings.
+
+- [`PostStatus`](#rule34poststatus)
+  
+  Enum for post publicity statuses.
+
+- [`TagType`](#rule34tagtype)
+
+  Enum for tag categories.
+
+## Objects
+
+- [`Rule34Post`](#rule34post)
+  
+  Post from rule34.xxx.
+
+# Examples
+
+In this example, the post at ID '5823623' is fetched and the username of its creator is logged.
+
+```js
+const post = Rule34.getPost(5823623);
+console.log(post.creator.name);
+// Logs "grovyleslut"
+```
+
+This example fetches multiple results, selects the fourth one, and logs whether its explicit.
+
+```js
+Rule34.search("zoologist_(terraria)")
+.then(results => {
+  const selection = results[3];
+  if (selection.rating === Rule34.PostRating.EXPLICIT) {
+    console.log("This search's 4th post is explicit!");
+  }
+});
+```
+
+# Functions
+
+## Rule34.setCredentials()
+
+The `setCredentials()` function applies the configured credentials to future requests.
 
 ### Syntax
 
-```js
-new Rule34({ user_id, api_key })
-new Rule34({ user_id, api_key, config })
-new Rule34({ user_id, api_key, pass_hash })
-new Rule34({ user_id, api_key, pass_hash, config })
+```ts
+Rule34.setCredentials({ user_id, api_key, pass_hash?, config? })
 ```
-
-> [!NOTE]
-> `Rule34()` can only be called with [`new`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new). Attempting to call it without `new` throws a [`TypeError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError).
 
 #### Parameters
 
