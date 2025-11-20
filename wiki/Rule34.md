@@ -83,7 +83,7 @@ new Rule34({ user_id, api_key, pass_hash, config })
 ```
 
 #### Parameters
-  
+
 - `user_id`
 
   The numeric [`user_id`](#rule34prototypeuser_id) link parameter and header to use with API and POST requests respectively. This is currently mandatory.
