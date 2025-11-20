@@ -1,8 +1,48 @@
 Rule34 has a very stubborn API, as it doesn't provide all the info a developer may seek, and the different result types yield different results, some exclusive. This makes it quite difficult to get many kinds of info, especially post info from a search.
 
 This package's namesake comes from the usage of Rule34's APIs and frontends&mdash;a lot of requests (usually about 2&ndash;4) are made when most of the functions are used.
+  
+# Table of contents
 
-## Description
+- [Description](#description)
+
+- [Examples](#examples)
+
+## Functions
+
+- [`setCredentials()`](#rule34setcredentials)
+
+  Sets the cretentials to use for requests.
+
+- [`getPost()`](#rule34getpost)
+
+  Fetches a post by its ID or by the first result of a query.
+
+- [`search()`](#rule34search)
+
+  Fetches multiple results of a query and/or conditions.
+
+## Enumerables
+
+- [`PostRating`](#rule34postrating)
+
+  Enum for post content ratings.
+
+- [`PostStatus`](#rule34poststatus)
+  
+  Enum for post publicity statuses.
+
+- [`TagType`](#rule34tagtype)
+
+  Enum for tag categories.
+
+## Objects
+
+- [`Rule34Post`](#rule34post)
+  
+  Post from rule34.xxx.
+
+# Description
 
 Traditionally, one would simply fetch from Rule34 using its API URLs.
 
@@ -39,42 +79,6 @@ import { Rule34 } from "booru-abuse";
 
 const post = await Rule34.getPost(5823623);
 ```
-
-# Table of contents
-
-## Functions
-
-- [`setCredentials()`](#rule34setcredentials)
-
-  Sets the cretentials to use for requests.
-
-- [`getPost()`](#rule34getpost)
-
-  Fetches a post by its ID or by the first result of a query.
-
-- [`search()`](#rule34search)
-
-  Fetches multiple results of a query and/or conditions.
-
-## Enumerables
-
-- [`PostRating`](#rule34postrating)
-
-  Enum for post content ratings.
-
-- [`PostStatus`](#rule34poststatus)
-  
-  Enum for post publicity statuses.
-
-- [`TagType`](#rule34tagtype)
-
-  Enum for tag categories.
-
-## Objects
-
-- [`Rule34Post`](#rule34post)
-  
-  Post from rule34.xxx.
 
 # Examples
 
