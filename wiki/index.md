@@ -13,4 +13,4 @@ This is particularly useful for Rule34.xxx, as their APIs are confusing and diff
 
 ## Supported sites
 
-- [Rule34](./Rule34)
+- [Rule34](./Rule34) &mdash; If it exists, there is porn of it.
