@@ -61,7 +61,7 @@ This can have network and API usage limit implications.
 <!-- TODO: display average data size of multiple requests -->
 <!-- TODO: display default API key usage allowance -->
 
-## Functions
+# Functions
 
 - [`setCredentials()`](./setCredentials)
 
@@ -75,7 +75,7 @@ This can have network and API usage limit implications.
 
   Fetches multiple results of a query and/or conditions.
 
-## Enumerables
+# Enumerables
 
 - [`PostRating`](./PostRating)
 
@@ -89,7 +89,7 @@ This can have network and API usage limit implications.
 
   Enum for tag categories.
 
-## Objects
+# Objects
 
 - [`Rule34Post`](./Rule34Post)
   
