@@ -1,7 +1,6 @@
 ---
 title: Rule34.setCredentials()
 description: booru-abuse
-
 ---
 
 The `setCredentials()` function applies the configured credentials to future requests.
