@@ -58,9 +58,6 @@ Because APIs and frontends have very differing info, multiple requests are made&
 
 This can have network and API usage limit implications. Each documented function that uses requests will clarify its request usage.
 
-<!-- TODO: display average data size of multiple requests -->
-<!-- TODO: display default API key usage allowance -->
-
 # Functions
 
 - [`setCredentials()`](./setCredentials)
