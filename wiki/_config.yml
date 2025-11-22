@@ -1,3 +1,5 @@
 plugins:
   - jekyll-remote-theme
 remote_theme: jekyll-theme-github
+
+tagline: booru-abuse
