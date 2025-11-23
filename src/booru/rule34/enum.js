@@ -4,14 +4,12 @@ export let PostRating = Enum([
     "SAFE",
     "QUESTIONABLE",
     "EXPLICIT"
-])
-    .freeze();
+]);
 export let PostStatus = Enum([
     "ACTIVE",
     "FLAGGED",
     "DELETED"
-])
-    .freeze();
+]);
 
 export let TagType = Enum([
     "COPYRIGHT",
@@ -20,5 +18,4 @@ export let TagType = Enum([
     "GENERAL",
     "METADATA",
     "NULL"
-])
-    .freeze();
+]);
