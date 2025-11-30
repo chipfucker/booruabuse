@@ -65,8 +65,6 @@ This can have network and API usage limit implications. Each documented function
 
 - [`search()`](./search) &mdash; Fetches multiple results of a query and/or conditions
 
--
-
 # Enumerables
 
 - [`PostRating`](./PostRating) &mdash; Enum of post content ratings
