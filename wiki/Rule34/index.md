@@ -60,37 +60,25 @@ This can have network and API usage limit implications. Each documented function
 
 # Functions
 
-- [`setCredentials()`](./setCredentials)
+- [`setCredentials()`](./setCredentials) &mdash; Sets the cretentials to use for requests
 
-  Sets the cretentials to use for requests.
+- [`getPost()`](./getPost) &mdash; Fetches a post by its ID or by the first result of a query
 
-- [`getPost()`](./getPost)
+- [`search()`](./search) &mdash; Fetches multiple results of a query and/or conditions
 
-  Fetches a post by its ID or by the first result of a query.
-
-- [`search()`](./search)
-
-  Fetches multiple results of a query and/or conditions.
+-
 
 # Enumerables
 
-- [`PostRating`](./PostRating)
+- [`PostRating`](./PostRating) &mdash; Enum of post content ratings
 
-  Enum for post content ratings.
+- [`PostStatus`](./PostStatus) &mdash; Enum of post publicity statuses
 
-- [`PostStatus`](./PostStatus)
-  
-  Enum for post publicity statuses.
-
-- [`TagType`](./TagType)
-
-  Enum for tag categories.
+- [`TagType`](./TagType) &mdash; Enum of tag categories
 
 # Objects
 
-- [`Rule34Post`](./Rule34Post)
-  
-  Post from rule34.xxx.
+- [`Rule34Post`](./Rule34Post) &mdash; Post from rule34.xxx
 
 # Examples
 
@@ -113,3 +101,7 @@ Rule34.search("zoologist_(terraria)")
   }
 });
 ```
+
+# Aside
+
+Booru Abuse is currently dedicated to activity revolving a single user. It is planned for the future to support creating a user object with methods to interact with posts or favorites.
