@@ -1,7 +1,6 @@
 ---
 title: Rule34
-description: booru-abuse
-tagline: If it exists, there is porn of it.
+description: booru-abuse module to access content from rule34.xxx
 ---
 
 Rule34 is a module for accessing content from [rule34.xxx](https://rule34.xxx/). This package's namesake is from this submodule.
