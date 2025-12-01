@@ -4,14 +4,6 @@ description: booru-abuse module to access content from rule34.xxx
 ---
 
 Rule34 is a module for accessing content from [rule34.xxx](https://rule34.xxx/). This package's namesake is from this submodule.
-  
-# Table of contents
-
-- [Description](#description)
-- [Examples](#examples)
-- [Functions](#functions)
-- [Enumerables](#enumerables)
-- [Objects](#objects)
 
 # Description
 
@@ -51,33 +43,45 @@ import { Rule34 } from "booru-abuse";
 const post = await Rule34.getPost(5823623);
 ```
 
+> [!NOTE]
+> This example is oversimplified. You can read more about setting up a Rule34 API client [using the guide.](./guide)
+
 ## Many requests
 
 Because APIs and frontends have very differing info, multiple requests are made&mdash;typically 2&ndash;4&mdash;per function to resolve all possible info. This makes the package's namesake.
 
 This can have network and API usage limit implications. Each documented function that uses requests will clarify its request usage.
 
-# Functions
+<!-- TODO: remove this but still note methods that use the api multiple times -->
 
-- [`setCredentials()`](./setCredentials) &mdash; Sets the cretentials to use for requests
-
-- [`getPost()`](./getPost) &mdash; Fetches a post by its ID or by the first result of a query
-
-- [`search()`](./search) &mdash; Fetches multiple results of a query and/or conditions
-
-# Enumerables
-
-- [`PostRating`](./PostRating) &mdash; Enum of post content ratings
-
-- [`PostStatus`](./PostStatus) &mdash; Enum of post publicity statuses
-
-- [`TagType`](./TagType) &mdash; Enum of tag categories
+- - -
 
 # Objects
 
-- [`Rule34Post`](./Rule34Post) &mdash; Post from rule34.xxx
+- [`Client`](./Client) &mdash; Client to allow accessing data from the site
+
+- [`Post`](./Post) &mdash; Post from rule34.xxx
+
+# Functions
+
+- [`getPost()`](./getPost) &mdash; Fetches a post by its ID
+
+- [`search()`](./search) &mdash; Fetches an array of posts using a query
+
+# Enumerables
+
+- [`PostRating`](./PostRating) &mdash; Post content ratings
+
+- [`PostStatus`](./PostStatus) &mdash; Post publicity statuses
+
+- [`TagType`](./TagType) &mdash; Tag categories
+
+- - -
 
 # Examples
+
+> [!IMPORTANT]
+> The following examples are oversimplified. You can read more about setting up a Rule34 API client [using the guide.](./guide)
 
 In this example, the post at ID '5823623' is fetched and the username of its creator is logged.
 
@@ -98,7 +102,3 @@ Rule34.search("zoologist_(terraria)")
   }
 });
 ```
-
-# Aside
-
-Booru Abuse is currently dedicated to activity revolving a single user. It is planned for the future to support creating a user object with methods to interact with posts or favorites.
