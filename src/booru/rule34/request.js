@@ -15,12 +15,12 @@ export async function autocomplete(query) {
     return data;
 }
 
-export const FE = {
+export const frontend = {
     async search(param) {
         return await fetch(getUrl("https://rule34.xxx", {
             page: "post",
             s: "list",
-            tags: param.query ?? "",
+            tags: param.query,
             pid: param.offset
         })).then(getDocument);
     }
